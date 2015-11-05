@@ -1,0 +1,26 @@
+{
+  "name": "data-structures-and-algorithms",
+  "version": "1.0.0",
+  "description": "Code Fellows Data Structures and Algorithms Assignment",
+  "main": "array-methods.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KenjiCrosland/data-structures-and-algorithms.git"
+  },
+  "author": "Kenji Crosland",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KenjiCrosland/data-structures-and-algorithms/issues"
+  },
+  "homepage": "https://github.com/KenjiCrosland/data-structures-and-algorithms#readme",
+  "devDependencies": {
+    "chai": "^3.4.0",
+    "mocha": "^2.3.3"
+  }
+}
