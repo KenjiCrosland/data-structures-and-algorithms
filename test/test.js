@@ -6,7 +6,7 @@ describe('the Array.myPush method', function(){
     var myArray = [1,2,3];
     arr.myPush(myArray, 4);
 
-    expect(myArray[myArray.length - 1]).to.equal(4)
+    expect(myArray[myArray.length - 1]).to.equal(4);
     expect(myArray.length).to.equal(4);
   });
 });
@@ -57,7 +57,7 @@ describe('the unique method', function(){
     var unique3 = arr.unique(myArray3);
     expect(unique).to.eql([2,3,4]);
     expect(unique2).to.eql(['duck', 'goose']);
-    //expect(unique3).to.eql([0, -0, 1, "1", [1], 2]);
+    //Still haven't figured out this: expect(unique3).to.eql([0, -0, 1, "1", [1], 2]);
   });
 });
 

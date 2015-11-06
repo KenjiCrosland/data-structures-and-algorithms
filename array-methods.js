@@ -13,7 +13,7 @@ module.exports = {
 
   myPop: function myPop(array) {
    var element = array[array.length - 1];
-   array.length = array.length - 1
+   array.length = array.length - 1;
    return element;
   },
 
@@ -59,7 +59,7 @@ module.exports = {
       myString +=  array[i].toLowerCase();
     }
     letterArray = myString.split("");
-    for(var i = 0; i < letterArray.length; i++){
+    for(i = 0; i < letterArray.length; i++){
       if(!tempObject.hasOwnProperty(letterArray[i])){
         tempObject[letterArray[i]] = 1;
       } else {
@@ -69,7 +69,7 @@ module.exports = {
     //some help here: http://stackoverflow.com/questions/2620922/get-the-largest-value-from-json-object-with-javascript
     var maxValue = 0;
     var frequent = "";
-    for (letter in tempObject){
+    for (var letter in tempObject){
       if (tempObject[letter] > maxValue){
         maxValue = tempObject[letter];
       }
@@ -81,4 +81,4 @@ module.exports = {
     }
     return frequent;
   }
-}
+};
