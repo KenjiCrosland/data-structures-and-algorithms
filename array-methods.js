@@ -39,23 +39,46 @@ module.exports = {
   },
 
   unique: function unique(array){
-    //USE AN OBJECT!!
-    var temp = array;
-    array.length = array.length - 1
-    for (var i = array.length; i > array.length; i++){
-
-      for(var j = i + 1; j > array.length; j++){
-        if (array[i] === array[j]){
-          newArray[i] = array[i];
-        }
+    var tempObject = {};
+    var returnArray = [];
+    for (var i = 0; i < array.length; i++){
+      if (!tempObject.hasOwnProperty(array[i])){
+        tempObject[array[i]] = array[i];
+        //This final line with a little help my friends: http://stackoverflow.com/questions/33558271/looping-through-an-array-object-to-find-duplicates-why-is-one-element-returning#33558340
+        returnArray[returnArray.length] = array[i];
       }
     }
-return newArray;
+    return returnArray;
+  },
+
+  frequency: function frequency(array){
+    var tempObject = {};
+    var letterArray = [];
+    var myString = "";
+    for(var i = 0; i < array.length; i++){
+      myString +=  array[i].toLowerCase();
+    }
+    letterArray = myString.split("");
+    for(var i = 0; i < letterArray.length; i++){
+      if(!tempObject.hasOwnProperty(letterArray[i])){
+        tempObject[letterArray[i]] = 1;
+      } else {
+        tempObject[letterArray[i]] = tempObject[letterArray[i]] + 1;
+      }
+    }
+    //some help here: http://stackoverflow.com/questions/2620922/get-the-largest-value-from-json-object-with-javascript
+    var maxValue = 0;
+    var frequent = "";
+    for (letter in tempObject){
+      if (tempObject[letter] > maxValue){
+        maxValue = tempObject[letter];
+      }
+    }
+    for (letter in tempObject){
+      if (tempObject[letter] === maxValue){
+       frequent = letter;
+      }
+    }
+    return frequent;
   }
 }
-
-//First it goes through the for loop. Building a unique in an order where all dupes are next to each other
-
-//Create an empty array
-//Add to the empty array if it hasn't been already
-//Leave off point

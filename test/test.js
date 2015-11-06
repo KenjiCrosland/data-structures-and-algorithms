@@ -37,7 +37,7 @@ describe('the myShift method', function(){
   });
 });
 
-describe('the Array.myUnshift method', function(){
+describe('the myUnshift method', function(){
   it('should return an with an extra element that we pass into it', function() {
     var myArray = [1,2,3];
     arr.myUnshift(myArray, 0);
@@ -48,10 +48,27 @@ describe('the Array.myUnshift method', function(){
 });
 
 describe('the unique method', function(){
-  it('should return an with an extra element that we pass into it', function() {
-    var myArray = [2,2,3,2,2,2,2];
-    //expect(myArray).to.eql([2,2,3,2,2,2,2]);
+  it('should reduce an array to only unique values', function() {
+    var myArray = [2,2,3,3,4,2,2,2,2];
+    var myArray2 = ['duck', 'duck', 'goose'];
+    var myArray3 = [0, -0, 1, "1", [1], 2];
     var unique = arr.unique(myArray);
-    expect(unique).to.eql([2,3]);
+    var unique2 = arr.unique(myArray2);
+    var unique3 = arr.unique(myArray3);
+    expect(unique).to.eql([2,3,4]);
+    expect(unique2).to.eql(['duck', 'goose']);
+    //expect(unique3).to.eql([0, -0, 1, "1", [1], 2]);
+  });
+});
+
+describe('the frequency method', function(){
+  it('should return the most common letter in an array of english words', function() {
+    var myArray = ['a', 'aBb', 'acCc', 'aDdd'];
+    var myArray2 = ['the', 'quick', 'brown', 'fox', 'jumped', 'over', 'the', 'lazy', 'dog']; //Just for fun
+    var mostFrequent = arr.frequency(myArray);
+    var mostFrequent2 = arr.frequency(myArray2);
+
+    expect(mostFrequent).to.equal('a');
+    expect(mostFrequent2).to.equal('o');
   });
 });
